@@ -366,12 +366,12 @@
 // Specify here all the endstop connectors that are connected to any endstop or probe.
 // Almost all printers will be using one per axis. Probes will use one or more of the
 // extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
-#define USE_XMIN_PLUG
+//#define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
-#define USE_ZMIN_PLUG
-//#define USE_XMAX_PLUG
+//#define USE_ZMIN_PLUG
+#define USE_XMAX_PLUG
 //#define USE_YMAX_PLUG
-//#define USE_ZMAX_PLUG
+#define USE_ZMAX_PLUG
 
 // coarse Endstop Settings
 #define ENDSTOPPULLUPS // Comment this out (using // at the start of the line) to disable the endstop pullup resistors
@@ -480,7 +480,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 #define INVERT_E3_DIR false
 
 // @section homing
-//#define MIN_Z_HEIGHT_FOR_HOMING 4 // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
+#define MIN_Z_HEIGHT_FOR_HOMING 10 // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
                                     // Be sure you have this distance over your Z_MAX_POS in case.
 
 // ENDSTOP SETTINGS:
