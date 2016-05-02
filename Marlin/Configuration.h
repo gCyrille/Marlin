@@ -172,7 +172,7 @@ Here are some standard links for getting your machine calibrated:
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 290
+#define HEATER_0_MAXTEMP 275
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
@@ -208,9 +208,9 @@ Here are some standard links for getting your machine calibrated:
   #define K1 0.95 //smoothing factor within the PID
 
   // E3D V6
-  #define  DEFAULT_Kp 36.13
-  #define  DEFAULT_Ki 4.65
-  #define  DEFAULT_Kd 70.14
+  #define  DEFAULT_Kp 44.53
+  #define  DEFAULT_Ki 6.38
+  #define  DEFAULT_Kd 77.70
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // Ultimaker
@@ -337,7 +337,7 @@ Here are some standard links for getting your machine calibrated:
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 const bool X_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
-const bool Y_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
+const bool Y_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
 const bool Z_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
 const bool X_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of the endstop.
 const bool Y_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
@@ -403,9 +403,9 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 210
+#define X_MAX_POS 200
 #define Y_MAX_POS 260
-#define Z_MAX_POS 16
+#define Z_MAX_POS 35
 
 //===========================================================================
 //========================= Filament Runout Sensor ==========================
@@ -424,8 +424,8 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 //=========================== Manual Bed Leveling ===========================
 //===========================================================================
 
-#define MANUAL_BED_LEVELING  // Add display menu option for bed leveling.
-#define MESH_BED_LEVELING    // Enable mesh bed leveling.
+//#define MANUAL_BED_LEVELING  // Add display menu option for bed leveling.
+//#define MESH_BED_LEVELING    // Enable mesh bed leveling.
 
 #if ENABLED(MANUAL_BED_LEVELING)
   #define MBL_Z_STEP 0.025  // Step size while manually probing Z axis.
@@ -588,13 +588,13 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
  * MOVEMENT SETTINGS
  */
 
-#define HOMING_FEEDRATE {50*60, 40*60, 4*60, 0}  // set the homing speeds (mm/min)
+#define HOMING_FEEDRATE {50*60, 35*60, 4*60, 0}  // set the homing speeds (mm/min)
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {200,369,170.47,500}  // default steps per unit for Ultimaker
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {200,376.7,106.5,92}  // default steps per unit for Ultimaker
 #define DEFAULT_MAX_FEEDRATE          {80, 40, 5, 25}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {2000,1500,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_ACCELERATION      {2000,1350,100,1500}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          1500    // X, Y, Z and E acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration in mm/s^2 for retracts
